@@ -1,0 +1,19 @@
+# Sort the items by catagory and by colour
+
+# Add a total at the end
+
+items:
+  - banana
+  - orange
+  - strawberry
+  - broccoli
+  - grapes
+  - carrot
+  - tomato
+  - peppers
+  - watermelon
+  - lettuce
+
+fruit:
+
+veg:

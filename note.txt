@@ -1,3 +1,11 @@
+*/ Role /*
+create --> ansible-galaxy init apache
+
+*/ Var cmd run /*
+ansible-playbook basic.yaml
+ansible-playbook -e "@var.yaml" var_file_demo.yaml --> file outside inherit file
+ansible-playbook -i aws.ini variables/multi.yaml
+ansible-playbook -e "basic_var=CLI" cli.yaml
 
 ansible-playbook -i aws.ini playbook.yaml
 

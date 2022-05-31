@@ -1,0 +1,12 @@
+- hosts: localhost
+  vars_files:
+    - var.yaml
+#  vars:
+#    basic_var: My First Variable
+  tasks:
+  - name: Display 1st Value
+    debug:
+        msg: "{{ http_port }}"
+  - name: Display 2nd Value
+    debug:
+        msg: "{{ server_name }}"

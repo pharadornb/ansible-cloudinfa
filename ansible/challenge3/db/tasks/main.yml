@@ -4,3 +4,8 @@
   yum:
     name: "{{ db_server }}"
     state: installed
+  notify:
+    - Start DB
+- name: Display DB Installed
+  debug:
+    msg: "{{ db_server }}"

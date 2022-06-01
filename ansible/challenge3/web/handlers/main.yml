@@ -1,6 +1,6 @@
 ---
 # handlers file for web
-- name: Start Web
+- name: Start web
   service:
     name: httpd
     state: started

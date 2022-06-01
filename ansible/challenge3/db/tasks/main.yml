@@ -1,0 +1,6 @@
+---
+# tasks file for db
+- name: Install B
+  yum:
+    name: "{{ db_server }}"
+    state: installed

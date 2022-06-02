@@ -8,7 +8,11 @@ ansible web -i aws.ini -m ping
 ```
 - ssh for .pem key by instance on cloud(aws)
 ```
-chmod 400 ansible_lnd_key.pem
+chmod 400 <name_key>.pem
+```
+- windows server on cloud(aws)
+```
+ansible windows -i win_server.yaml -m win_whoami
 ```
 
 -----
@@ -62,6 +66,22 @@ https://docs.ansible.com/ansible/latest/user_guide/playbooks_reuse_roles.html
 https://docs.ansible.com/ansible/latest/user_guide/intro_dynamic_inventory.html
 https://raw.githubusercontent.com/ansible/ansible/stable-1.9/plugins/inventory/ec2.py
 https://raw.githubusercontent.com/ansible/ansible/stable-1.9/plugins/inventory/ec2.ini
+### `- ansible-windows-aws-server`
+https://docs.ansible.com/ansible/latest/user_guide/windows_setup.html
 
----
-<p align="center">© 2022 <a href="https://www.facebook.com/PharadornB/">Phradorn Boonruam</a> Open-Source</p>
+
+*/ Role /*
+create --> ansible-galaxy init apache
+ansible-playbook -i aws.ini roles/playbook.yaml
+ansible-galaxy install --roles-path . -r requirements.yaml
+ansible-galaxy collection install -p . -r requirements.yaml
+ansible-playbook -i aws.ini -e "basic_var=CLI" variables/var_role.yaml
+ansible-playbook -i aws.ini roles/playbook.yaml
+
+*/ Var cmd run /*
+ansible-playbook basic.yaml
+ansible-playbook -e "@var.yaml" var_file_demo.yaml --> file outside inherit file
+ansible-playbook -i aws.ini variables/multi.yaml
+ansible-playbook -e "basic_var=CLI" cli.yaml
+ansible-playbook -i aws.ini playbook.yaml
+ansible-playbook -i aws.ini playbooks/service.yaml
